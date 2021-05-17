@@ -38,7 +38,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.headers().disable();
         http.authorizeRequests()
-                .antMatchers("/home").hasRole("USER")
+                .antMatchers("/", "/api/cars/all").permitAll()
+                .anyRequest().hasRole("USER")
                 .and()
                 .formLogin().loginPage("/signIn").defaultSuccessUrl("/home", true).failureUrl("/signIn?wrong").permitAll()
                 .and()

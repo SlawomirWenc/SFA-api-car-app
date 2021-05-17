@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <a href="/" th:href="@{/}" ><img style="height:30px; width:30px" src="https://img-premium.flaticon.com/png/512/553/553376.png?token=exp=1621257384~hmac=b37a3c6d83e96c99917cc2063b43223a" /></a>
+            <a href="/" th:href="@{/}" ><img style="height:30px; width:30px" src="https://img-premium.flaticon.com/png/512/553/553376.png?token=exp=1621257384~hmac=b37a3c6d83e96c99917cc2063b43223a" /></a> &nbsp
         </ul>
         <form form-method="post" th:action="@{/logout}" class="form-inline my-2 my-lg-0">
             <button type="submit" class="btn btn-dark">Logout</button>
@@ -24,6 +24,9 @@
     <!-- TEXT -->
 </div>
 <div style="text-align: center;">
+    <form form-method="get" th:action="@{/swagger-ui.html}" >
+        <button type="submit" class="btn btn-success">Swagger UI</button>
+    </form><br>
     <button class="btn btn-dark" data-toggle="collapse" data-target="#api-key">Show api key</button>
     <div id="api-key" class="collapse">
         <p th:text="'API_KEY:  ' + ${api_key}"></p>
