@@ -1,7 +1,12 @@
 package com.example.SFAapicarapp;
 
+import com.example.SFAapicarapp.enums.FuelTypeEnum;
+import com.example.SFAapicarapp.enums.GearBoxEnum;
+import com.example.SFAapicarapp.enums.TypeEnum;
+import com.example.SFAapicarapp.model.Car;
 import com.example.SFAapicarapp.model.Token;
 import com.example.SFAapicarapp.model.User;
+import com.example.SFAapicarapp.service.CarService;
 import com.example.SFAapicarapp.service.TokenService;
 import com.example.SFAapicarapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,19 +24,35 @@ public class Starter {
 
     private PasswordEncoder passwordEncoder;
 
+    private CarService carService;
+
     @Autowired
-    public Starter(UserService userService, TokenService tokenService, PasswordEncoder passwordEncoder) {
+    public Starter(UserService userService, TokenService tokenService, PasswordEncoder passwordEncoder, CarService carService) {
         this.userService = userService;
         this.tokenService = tokenService;
         this.passwordEncoder = passwordEncoder;
+        this.carService = carService;
 
+        // USER
         User user = new User("user", passwordEncoder.encode("user"), "ROLE_USER");
         user.setEnabled(true);
         userService.addUser(user);
 
+        // TOKEN
         String value = UUID.randomUUID().toString();
         Token token = new Token(value, user);
         tokenService.addToken(token);
 
+        // CARS
+        carService.addCar(new Car("Fiat", "Bravo", 2011, TypeEnum.HATCHBACK, 105, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("Audi", "Q5", 2019, TypeEnum.SUV, 286, 3.0, GearBoxEnum.AUTOMATIC, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("Opel", "Vectra", 1999, TypeEnum.SEDAN, 136, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("Kia", "Soul", 2012, TypeEnum.MINIVAN, 128, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("Mercedes-Benz", "class S", 2007, TypeEnum.SEDAN, 235, 3.0, GearBoxEnum.AUTOMATIC, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("Dacia", "Duster", 2018, TypeEnum.SUV, 114, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("Dodge", "Challenger", 2017, TypeEnum.COUPE, 717, 6.2, GearBoxEnum.AUTOMATIC, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("Volkswagen", "Passat", 2013, TypeEnum.SEDAN, 160, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("Subaru", "Forester", 2005, TypeEnum.SUV, 158, 2.0, GearBoxEnum.MANUAL, FuelTypeEnum.GAS));
+        carService.addCar(new Car("Peugeot", "508", 2016, TypeEnum.COMBI, 150, 2.0, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
     }
 }
