@@ -5,6 +5,8 @@ import com.example.SFAapicarapp.repo.TokenRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TokenService {
 
@@ -17,5 +19,9 @@ public class TokenService {
 
     public void addToken(Token token){
         tokenRepo.save(token);
+    }
+
+    public Optional<Token> findTokenByValue(String value){
+        return tokenRepo.findTokenByValue(value);
     }
 }

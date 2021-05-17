@@ -1,0 +1,4 @@
+2021-05-17 18:50:34 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "TOKEN[*]"; oczekiwano "TRUNCATE"
+Syntax error in SQL statement "TOKEN[*]"; expected "TRUNCATE"; SQL statement:
+TOKEN [42001-200]
