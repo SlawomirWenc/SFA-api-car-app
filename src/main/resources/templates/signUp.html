@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body style="margin: 20px;">
+<div class="row ">
+    <div class="col-2">
+        <a href="/" th:href="@{/}" ><img style="height:30px; width:30px" src="https://img-premium.flaticon.com/png/512/553/553376.png?token=exp=1621257384~hmac=b37a3c6d83e96c99917cc2063b43223a" /></a>
+    </div>
+    <div class="col-10">
+    </div>
+</div>
+<div class="row ">
+    <div class="col-5"></div>
+    <div class="col-md-2  ">
+        <form method="post" th:action="@{/signUp}">
+            <h3>Sign up</h3>
+            <table>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="text" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div>
+                        <button class="btn btn-dark" type="submit">Register</button>
+                    </div></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="col-5"></div>
+</div>
+</body>
+</html>
