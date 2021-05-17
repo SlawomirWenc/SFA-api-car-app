@@ -1,6 +1,7 @@
 package com.example.SFAapicarapp.service;
 
 import com.example.SFAapicarapp.model.Token;
+import com.example.SFAapicarapp.model.User;
 import com.example.SFAapicarapp.repo.TokenRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,4 +25,8 @@ public class TokenService {
     public Optional<Token> findTokenByValue(String value){
         return tokenRepo.findTokenByValue(value);
     }
+    public Optional<Token> findTokenByUser(User user){
+        return tokenRepo.findTokenByUser(user);
+    }
+
 }

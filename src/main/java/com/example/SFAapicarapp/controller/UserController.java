@@ -6,8 +6,11 @@ import com.example.SFAapicarapp.service.MailService;
 import com.example.SFAapicarapp.service.TokenService;
 import com.example.SFAapicarapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,7 +44,21 @@ public class UserController {
     }
 
     @GetMapping("/home")
-    public String getHomeTemplate(){
+    public String getHomeTemplate(Model model){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail = authentication.getName();
+        Optional<User> user = userService.findByUserName(userEmail);
+
+        user.ifPresentOrElse(tempUser -> {
+            Optional<Token> token = tokenService.findTokenByUser(tempUser);
+            token.ifPresentOrElse(tempToken -> {
+                model.addAttribute("api_key",tempToken.getValue());
+            }, () -> {
+                System.out.println("Token not found");
+            });
+        }, () -> {
+            System.out.println("User not found");
+        });
         return "home";
     }
 

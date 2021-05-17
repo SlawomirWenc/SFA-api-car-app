@@ -20,7 +20,14 @@
         </form>
     </div>
 </nav>
-
-
+<div>
+    <!-- TEXT -->
+</div>
+<div style="text-align: center;">
+    <button class="btn btn-dark" data-toggle="collapse" data-target="#api-key">Show api key</button>
+    <div id="api-key" class="collapse">
+        <p th:text="'API_KEY:  ' + ${api_key}"></p>
+    </div>
+</div>
 </body>
 </html>
