@@ -24,6 +24,8 @@ public class User implements UserDetails {
 
     private String role;
 
+    private boolean isEnabled;
+
     public User() {
     }
 
@@ -31,6 +33,7 @@ public class User implements UserDetails {
         this.userEmail = userEmail;
         this.password = password;
         this.role = role;
+        this.isEnabled = false;
     }
 
     public Long getId() {
@@ -59,6 +62,10 @@ public class User implements UserDetails {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 
     @Override
@@ -93,7 +100,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return isEnabled;
     }
 
     @Override

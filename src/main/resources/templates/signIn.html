@@ -24,16 +24,13 @@
         <form th:action="@{/signIn}" method="post" >
             <h3>Sign in</h3>
             <div th:if="${param.error}" class="text-danger">
-                Invalid username and password.
+                Invalid username or password.
+            </div>
+            <div th:if="${param.wrong}" class="text-danger">
+                Something gone wrong. :c
             </div>
             <div th:if="${param.logout}" class="text-success">
-                You have been logged out.
-            </div>
-            <div th:if="${param.confirm}" class="text-danger">
-                You need to confirm your email.
-            </div>
-            <div th:if="${param.account}" class="text-danger">
-                Token account dont exist.
+                You have been successfully logged out.
             </div>
             <table>
                 <tr>

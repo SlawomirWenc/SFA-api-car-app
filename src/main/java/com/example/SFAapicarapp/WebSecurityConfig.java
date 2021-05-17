@@ -40,8 +40,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/home").hasRole("USER")
                 .and()
-                .formLogin().loginPage("/signIn").defaultSuccessUrl("/home", true).permitAll()
+                .formLogin().loginPage("/signIn").defaultSuccessUrl("/home", true).failureUrl("/signIn?wrong").permitAll()
                 .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/signIn").permitAll();
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/signIn?logout").permitAll();
     }
 }

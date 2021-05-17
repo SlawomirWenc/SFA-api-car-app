@@ -26,6 +26,7 @@ public class Starter {
         this.passwordEncoder = passwordEncoder;
 
         User user = new User("user", passwordEncoder.encode("user"), "ROLE_USER");
+        user.setEnabled(true);
         userService.addUser(user);
 
         String value = UUID.randomUUID().toString();
