@@ -4,10 +4,7 @@ import com.example.SFAapicarapp.enums.FuelTypeEnum;
 import com.example.SFAapicarapp.enums.GearBoxEnum;
 import com.example.SFAapicarapp.enums.TypeEnum;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Car {
@@ -22,14 +19,17 @@ public class Car {
 
     private int yearOfProduction;
 
+    @Enumerated(EnumType.STRING)
     private TypeEnum type;
 
     private int enginePower;
 
     private double engineCapacity;
 
+    @Enumerated(EnumType.STRING)
     private GearBoxEnum gearbox;
 
+    @Enumerated(EnumType.STRING)
     private FuelTypeEnum fuelType;
 
     public Car() {

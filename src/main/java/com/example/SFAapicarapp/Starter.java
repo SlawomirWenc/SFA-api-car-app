@@ -44,15 +44,15 @@ public class Starter {
         tokenService.addToken(token);
 
         // CARS
-        carService.addCar(new Car("Fiat", "Bravo", 2011, TypeEnum.HATCHBACK, 105, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
-        carService.addCar(new Car("Audi", "Q5", 2019, TypeEnum.SUV, 286, 3.0, GearBoxEnum.AUTOMATIC, FuelTypeEnum.DIESEL));
-        carService.addCar(new Car("Opel", "Vectra", 1999, TypeEnum.SEDAN, 136, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
-        carService.addCar(new Car("Kia", "Soul", 2012, TypeEnum.MINIVAN, 128, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
-        carService.addCar(new Car("Mercedes-Benz", "class S", 2007, TypeEnum.SEDAN, 235, 3.0, GearBoxEnum.AUTOMATIC, FuelTypeEnum.DIESEL));
-        carService.addCar(new Car("Dacia", "Duster", 2018, TypeEnum.SUV, 114, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
-        carService.addCar(new Car("Dodge", "Challenger", 2017, TypeEnum.COUPE, 717, 6.2, GearBoxEnum.AUTOMATIC, FuelTypeEnum.PETROL));
-        carService.addCar(new Car("Volkswagen", "Passat", 2013, TypeEnum.SEDAN, 160, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
-        carService.addCar(new Car("Subaru", "Forester", 2005, TypeEnum.SUV, 158, 2.0, GearBoxEnum.MANUAL, FuelTypeEnum.GAS));
-        carService.addCar(new Car("Peugeot", "508", 2016, TypeEnum.COMBI, 150, 2.0, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("fiat", "bravo", 2011, TypeEnum.HATCHBACK, 105, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("audi", "q5", 2019, TypeEnum.SUV, 286, 3.0, GearBoxEnum.AUTOMATIC, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("opel", "vectra", 1999, TypeEnum.SEDAN, 136, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("kia", "soul", 2012, TypeEnum.MINIVAN, 128, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("mercedes-benz", "class S", 2007, TypeEnum.SEDAN, 235, 3.0, GearBoxEnum.AUTOMATIC, FuelTypeEnum.DIESEL));
+        carService.addCar(new Car("dacia", "duster", 2018, TypeEnum.SUV, 114, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("dodge", "challenger", 2017, TypeEnum.COUPE, 717, 6.2, GearBoxEnum.AUTOMATIC, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("volkswagen", "fassat", 2013, TypeEnum.SEDAN, 160, 1.6, GearBoxEnum.MANUAL, FuelTypeEnum.PETROL));
+        carService.addCar(new Car("subaru", "forester", 2005, TypeEnum.SUV, 158, 2.0, GearBoxEnum.MANUAL, FuelTypeEnum.GAS));
+        carService.addCar(new Car("peugeot", "508", 2016, TypeEnum.COMBI, 150, 2.0, GearBoxEnum.MANUAL, FuelTypeEnum.DIESEL));
     }
 }
