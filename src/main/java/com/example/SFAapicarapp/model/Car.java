@@ -3,6 +3,7 @@ package com.example.SFAapicarapp.model;
 import com.example.SFAapicarapp.enums.FuelTypeEnum;
 import com.example.SFAapicarapp.enums.GearBoxEnum;
 import com.example.SFAapicarapp.enums.TypeEnum;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -42,6 +43,16 @@ public class Car {
         this.type = type;
         this.enginePower = enginePower;
         this.engineCapacity = engineCapacity;
+        this.gearbox = gearbox;
+        this.fuelType = fuelType;
+    }
+
+    public Car(String mark, String model, int yearOfProduction, TypeEnum type, int enginePower, GearBoxEnum gearbox, FuelTypeEnum fuelType) {
+        this.mark = mark;
+        this.model = model;
+        this.yearOfProduction = yearOfProduction;
+        this.type = type;
+        this.enginePower = enginePower;
         this.gearbox = gearbox;
         this.fuelType = fuelType;
     }

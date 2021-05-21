@@ -20,17 +20,35 @@
         </form>
     </div>
 </nav>
-<div>
-    <!-- TEXT -->
-</div>
 <div style="text-align: center;">
-    <form form-method="get" th:action="@{/swagger-ui.html}" >
+    <form form-method="get" th:action="@{/swagger-ui.html}" target="_blank">
         <button type="submit" class="btn btn-success">Swagger UI</button>
     </form><br>
     <button class="btn btn-dark" data-toggle="collapse" data-target="#api-key">Show api key</button>
     <div id="api-key" class="collapse">
         <p th:text="'API_KEY:  ' + ${api_key}"></p>
     </div>
+</div>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" ></br>
+        <h5><u>Available endpoints:</u></h5><br>
+        <ul>
+            <li>/api/cars/{id}</li>
+            <li>/api/cars/mark</li>
+            <li>/api/cars/model</li>
+            <li>/api/cars/year-of-production</li>
+            <li>/api/cars/type</li>
+            <li>/api/cars/engine-power</li>
+            <li>/api/cars/engine-capacity</li>
+            <li>/api/cars/gearbox</li>
+            <li>/api/cars/fuel-type</li>
+            <li>/api/cars/{id}/{value}</li>
+        </ul>
+        <p> * Everything about required params for testing or get data are present in Swagger UI.</p>
+    </div>
+    <div class="col-4"></div>
 </div>
 </body>
 </html>

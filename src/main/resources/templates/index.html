@@ -21,8 +21,46 @@
     </form>
   </div>
 </nav>
-<div>
-  <!-- TEXT -->
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6" ></br>
+    <div style="text-align: center; margin: 30px;">
+        Application contains data about fifty cars and delivers eleven endpoints including one available to non-registered users,
+        the rest require an account and confirmation via email.
+        A registered user has the ability to precisely download data from api and use tools such as Swagger UI.</p>
+    </div>
+
+    <div style="margin: 20px;">
+      <b>GET /api/cars</b> <br>
+      example for localhost: <i>http://localhost:8080/api/cars</i> <br><br/>
+      <h6>Endpoint allowed without registration:</h6>
+      <ul>
+        <li><a href="http://localhost:8080/api/cars/all" target="_blank">api/cars/all</a> - return all cars</li>
+      </ul>
+    </div>
+
+    <div style="margin: 20px;">
+      <h6>Application has one existing static active user:</h6>
+      <p>userEmail: <i>user@user.com</i> <br>
+      password: <i>user</i></p>
+    </div>
+
+    <div style="margin: 20px;">
+      <b>Example response:</b><br>
+      { <br>
+      &nbsp "id": 1, <br>
+      &nbsp "mark": "fiat", <br>
+      &nbsp "model": "bravo", <br>
+      &nbsp "yearOfProduction": 2011, <br>
+      &nbsp "type": "HATCHBACK", <br>
+      &nbsp "enginePower": 105, <br>
+      &nbsp "engineCapacity": 1.6, <br>
+      &nbsp "gearbox": "MANUAL", <br>
+      &nbsp "fuelType": "DIESEL" <br>
+      } <br>
+    </div>
+  </div>
+  <div class="col-3"></div>
 </div>
 </body>
 </html>
